@@ -15,6 +15,15 @@
    <children>
       <Pane layoutX="330.0" layoutY="70.0" prefHeight="580.0" prefWidth="620.0" style="-fx-background-color: #262626#262626;">
          <children>
+            <Button fx:id="nextBad" layoutX="555.0" layoutY="515.0" mnemonicParsing="false" style="-fx-background-color: #262626#262626 #262626#262626 #262626#262626 #262626#262626;">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/Users/divitir/Downloads/+%20sign%20in/point/next%20point.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <Button fx:id="skip" layoutX="224.0" layoutY="408.0" mnemonicParsing="false" style="-fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 14px; -fx-background-color: #262626#262626 #262626#262626;" text="Создать новый аккаут &gt;" textFill="#67ebf3">
                <font>
                   <Font size="10.0" />

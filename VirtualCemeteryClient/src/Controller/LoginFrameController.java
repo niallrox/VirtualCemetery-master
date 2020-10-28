@@ -1,8 +1,9 @@
 package Controller;
 
-import animatefx.animation.BounceIn;
+import animatefx.animation.Shake;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -19,6 +20,8 @@ public class LoginFrameController {
     @FXML
     Button next = new Button();
     @FXML
+    Button nextBad = new Button();
+    @FXML
     Button ru = new Button();
     @FXML
     Button en = new Button();
@@ -29,15 +32,20 @@ public class LoginFrameController {
 
     @FXML
     void initialize() {
+        Node graphicStyle = next.getGraphic();
         String borderStyle = login.getStyle();
         AtomicBoolean badLogPas = new AtomicBoolean(false);
         en.setOnAction(event -> {
+            en.setVisible(false);
+        });
+        next.setOnAction(event -> {
             badLogPas.set(true);
             login.setStyle("-fx-border-color: red;  -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #333333 #333333; -fx-font-family: Open Sans ; -fx-font-weight: 400; -fx-font-style: normal ; -fx-font-size: 18px; -fx-text-inner-color: white;");
-            new BounceIn(login).play();
+            new Shake(login).play();
             password.setStyle("-fx-border-color: red;  -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #333333 #333333; -fx-font-family: Open Sans ; -fx-font-weight: 400; -fx-font-style: normal ; -fx-font-size: 18px; -fx-text-inner-color: white;");
-            new BounceIn(password).play();
-            en.setVisible(false);
+            new Shake(password).play();
+            next.setGraphic(nextBad.getGraphic());
+            new Shake(next.getGraphic()).play();
         });
         ru.setOnAction(event -> {
             en.setVisible(true);
@@ -53,6 +61,17 @@ public class LoginFrameController {
             password.setStyle("-fx-border-color: #67EBF3;  -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #333333 #333333; -fx-font-family: Open Sans ; -fx-font-weight: 400; -fx-font-style: normal ; -fx-font-size: 18px; -fx-text-inner-color: white;");
 
         });
+        next.setOnMouseEntered(event -> {
+            if (!badLogPas.get()) {
+                next.setGraphic(graphicStyle);
+            }
+        });
+        next.setOnMouseExited(event -> {
+                    if (!badLogPas.get()) {
+                        next.setGraphic(graphicStyle);
+                    }
+                }
+        );
         login.setOnMouseEntered(event -> {
             if (!badLogPas.get()) {
                 login.setStyle("-fx-border-color: #67EBF3;  -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px; -fx-text-inner-color: white;");
@@ -75,7 +94,7 @@ public class LoginFrameController {
             }
         });
         skip.setOnMouseExited(event -> skip.setUnderline(false));
-        next.setOnAction(event -> {
+        skip.setOnAction(event -> {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("../GUI/SecondPreview.fxml"));
             try {
