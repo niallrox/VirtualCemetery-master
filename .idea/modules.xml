@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/VirtualCemetery.iml" filepath="$PROJECT_DIR$/VirtualCemetery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VirtualCemeteryClient/VirtualCemeteryClient.iml" filepath="$PROJECT_DIR$/VirtualCemeteryClient/VirtualCemeteryClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VirtualCemeteryServer/VirtualCemeteryServer.iml" filepath="$PROJECT_DIR$/VirtualCemeteryServer/VirtualCemeteryServer.iml" />
+    </modules>
+  </component>
+</project>

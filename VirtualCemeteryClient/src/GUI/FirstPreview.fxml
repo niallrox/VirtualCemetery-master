@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #121212#121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FirstPreviewController">
+   <children>
+      <Pane layoutX="330.0" layoutY="70.0" prefHeight="580.0" prefWidth="620.0" style="-fx-background-color: #262626#262626;">
+         <children>
+            <Button fx:id="skip" layoutX="264.0" layoutY="438.0" mnemonicParsing="false" style="-fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 14px; -fx-background-color: #262626#262626 #262626#262626;" text="Пропустить &gt;" textFill="#67ebf3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <ImageView fitHeight="239.0" fitWidth="482.0" layoutX="69.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/Users/divitir/Desktop/VCpictures/map.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="225.5" layoutY="321.0" style="-fx-font-family: Open Sans; -fx-font-weight: 700; -fx-font-style: normal; -fx-font-size: 24px;" text="Путешествуй" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="99.0" layoutY="369.0" prefHeight="57.0" prefWidth="422.0" style="-fx-font-family: Open Sans Open Sans; -fx-font-weight: 700; -fx-font-style: normal; -fx-font-size: 14px;" text="Рассмотри кладбища всего мира. Может хочешь увидеть могилу Пола Маккартни, но не можешь приехать, чтобы положить пару гвоздик. Мы решили твою проблему!" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Button fx:id="next" layoutX="555.0" layoutY="515.0" mnemonicParsing="false" style="-fx-background-color: #262626#262626 #262626#262626;">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/Users/divitir/Desktop/VCpictures/next_point.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="ru" layoutX="555.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: #262626#262626 #262626#262626 #262626#262626 #262626#262626;">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/Users/divitir/Desktop/VCpictures/ru%20point.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="en" layoutX="555.0" layoutY="20.0" mnemonicParsing="false" prefWidth="65.0" style="-fx-background-color: #262626#262626 #262626#262626 #262626#262626 #262626#262626;">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/Users/divitir/Desktop/VCpictures/en%20point.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></Pane>
+   </children>
+</AnchorPane>
