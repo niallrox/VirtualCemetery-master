@@ -12,11 +12,19 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class FirstPreviewController {
+public class PreviewController {
+    ExecutorService ftp = Executors.newSingleThreadExecutor();
+    Player playMP3 = null;
     @FXML
     Button skip1 = new Button();
     @FXML
@@ -91,21 +99,16 @@ public class FirstPreviewController {
             loginPane.setVisible(true);
             new SlideInLeft(loginPane).play();
         });
-//        skip1.setOnAction(event -> {
-//            FXMLLoader fxmlLoader = new FXMLLoader();
-//            fxmlLoader.setLocation(getClass().getResource("../GUI/LoginFrame.fxml"));
-//            try {
-//                fxmlLoader.load();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            next1.getScene().getWindow().hide();
-//            Stage stage = new Stage();
-//            stage.initStyle(StageStyle.UNDECORATED);
-//            stage.setScene(new Scene(fxmlLoader.getRoot(), 1280, 720));
-//            stage.show();
-//
-//        });
+        skip1.setOnAction(event -> {
+            pane1.setVisible(false);
+            loginPane.setVisible(true);
+            new SlideInLeft(loginPane).play();
+        });
+        skip2.setOnAction(event -> {
+            pane2.setVisible(false);
+            loginPane.setVisible(true);
+            new SlideInLeft(loginPane).play();
+        });
         Node graphicStyle = next4.getGraphic();
         String borderStyle = login.getStyle();
         AtomicBoolean badLogPas = new AtomicBoolean(false);
@@ -120,6 +123,29 @@ public class FirstPreviewController {
             new Shake(password).play();
             next4.setGraphic(nextBad.getGraphic());
             new Shake(next4.getGraphic()).play();
+//            Runnable music = () -> {
+//
+//                FileInputStream fis = null;
+//                try {
+//                    fis = new FileInputStream("/Users/divitir/Downloads/VirtualCemetery-master/VirtualCemeteryClient/untitled.mp3");
+//                } catch (FileNotFoundException e) {
+//                    e.printStackTrace();
+//                }
+//                try {
+//                    playMP3 = new Player(fis);
+//                } catch (JavaLayerException e) {
+//                    e.printStackTrace();
+//                }
+//                try {
+//                    playMP3.play();
+//                } catch (JavaLayerException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            };
+//            ftp.execute(music);
+//            login.setText(login.getText().trim());
+//            password.setText(password.getText().trim());
         });
         ru4.setOnAction(event -> {
             en4.setVisible(true);
@@ -170,7 +196,7 @@ public class FirstPreviewController {
         skip4.setOnMouseExited(event -> skip4.setUnderline(false));
         skip4.setOnAction(event -> {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("../GUI/FirstPreview.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("../GUI/SignReg.fxml"));
             try {
                 fxmlLoader.load();
             } catch (IOException e) {
