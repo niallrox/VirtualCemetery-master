@@ -14,11 +14,13 @@ public class ServerSender implements Runnable {
     private SocketAddress address;
     private DatagramChannel datagramChannel;
 
+
     public ServerSender(Command command, SocketAddress address, DatagramChannel datagramChannel) {
         this.command = command;
         this.address = address;
         this.datagramChannel = datagramChannel;
     }
+
 
     /**
      * Метод отправляет результат на клиент
