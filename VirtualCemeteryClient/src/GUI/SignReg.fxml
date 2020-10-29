@@ -12,9 +12,38 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane  prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #121212#121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignRegController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #121212#121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignRegController">
    <children>
-      <Pane fx:id="pane1" layoutX="338.0" layoutY="80.0" prefHeight="580.0" prefWidth="620.0" style="-fx-background-color: #262626#262626;">
+      <Pane fx:id="rules" layoutX="338.0" layoutY="80.0" prefHeight="580.0" prefWidth="620.0" style="-fx-background-color: #262626#262626;" visible="false">
+         <children>
+            <ImageView fitHeight="532.0" fitWidth="555.0" layoutX="60.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/Users/divitir/Desktop/VCpictures/Снимок%20экрана%202020-10-30%20в%200.16.34.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="skip11" layoutX="368.0" layoutY="298.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="156.0" style="-fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 14px; -fx-background-color: #262626#262626 #262626#262626;" text="Службу поддержки" textFill="#67ebf3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="close" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" style="-fx-background-color: #262626#262626 #262626#262626 #262626#262626 #262626#262626;">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/Users/divitir/Desktop/VCpictures/cross%20point.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="reg" layoutX="338.0" layoutY="80.0" prefHeight="580.0" prefWidth="620.0" style="-fx-background-color: #262626#262626;">
          <children>
             <Button fx:id="skip1" layoutX="263.0" layoutY="447.0" mnemonicParsing="false" style="-fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 14px; -fx-background-color: #262626#262626 #262626#262626;" text="Правила пользования приложением" textFill="#67ebf3">
                <font>
@@ -29,6 +58,15 @@
                   <Font name="Times New Roman Bold" size="24.0" />
                </font>
             </Label>
+            <Button fx:id="nextBad" layoutX="555.0" layoutY="515.0" mnemonicParsing="false" style="-fx-background-color: #262626#262626 #262626#262626 #262626#262626 #262626#262626;">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/Users/divitir/Downloads/+%20sign%20in/point/next%20point.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <Button fx:id="next1" layoutX="555.0" layoutY="515.0" mnemonicParsing="false" style="-fx-background-color: #262626#262626 #262626#262626;">
                <graphic>
                   <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
@@ -70,11 +108,11 @@
             </Button>
             <TextField fx:id="login1" layoutX="95.0" layoutY="277.0" prefHeight="40.0" prefWidth="431.0" promptText="Логин" style=" -fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" styleClass="xuy" />
             <PasswordField fx:id="password1" layoutX="95.0" layoutY="332.0" prefHeight="40.0" prefWidth="431.0" promptText="Пароль" style="-fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" />
-            <TextField fx:id="login11" layoutX="95.0" layoutY="112.0" prefHeight="40.0" prefWidth="431.0" promptText="Имя" style=" -fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" styleClass="xuy" />
-            <TextField fx:id="login111" layoutX="95.0" layoutY="167.0" prefHeight="40.0" prefWidth="431.0" promptText="Фамилия" style=" -fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" styleClass="xuy" />
+            <TextField fx:id="name1" layoutX="95.0" layoutY="112.0" prefHeight="40.0" prefWidth="431.0" promptText="Имя" style=" -fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" styleClass="xuy" />
+            <TextField fx:id="surname1" layoutX="95.0" layoutY="167.0" prefHeight="40.0" prefWidth="431.0" promptText="Фамилия" style=" -fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" styleClass="xuy" />
             <TextField fx:id="daterText" layoutX="95.0" layoutY="222.0" prefHeight="40.0" prefWidth="431.0" promptText="Дата Рождения" style=" -fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" styleClass="xuy" />
             <DatePicker fx:id="dater" cache="true" layoutX="95.0" layoutY="222.0" opacity="0.0" prefHeight="40.0" prefWidth="431.0" style=" -fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" />
-            <PasswordField fx:id="password11" layoutX="95.0" layoutY="387.0" prefHeight="40.0" prefWidth="431.0" promptText="Пароль еще раз" style="-fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" />
+            <PasswordField fx:id="passwordOneMore" layoutX="95.0" layoutY="387.0" prefHeight="40.0" prefWidth="431.0" promptText="Пароль еще раз" style="-fx-border-color: black; -fx-border-radius: 5px; -fx-border-style: solid; -fx-background-color: #262626#262626 #262626#262626; -fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 18px;" />
             <Label layoutX="124.0" layoutY="452.0" style="-fx-font-family: Open Sans Open Sans; -fx-font-weight: 700; -fx-font-style: normal; -fx-font-size: 14px;" text="Согласен соблюдать" textFill="WHITE" />
             <Button fx:id="tickTrue" layoutX="86.0" layoutY="447.0" mnemonicParsing="false" style="-fx-background-color: #262626#262626 #262626#262626;">
                <graphic>
@@ -84,15 +122,21 @@
                      </image>
                   </ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button fx:id="tickFalse" layoutX="86.0" layoutY="447.0" mnemonicParsing="false" style="-fx-background-color: #262626#262626 #262626#262626;">
                <graphic>
-                  <ImageView  fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/Users/divitir/Desktop/VCpictures/tick.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </Pane>

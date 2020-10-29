@@ -18,11 +18,13 @@ import javazoom.jl.player.Player;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class PreviewController {
+    ArrayList<FileInputStream> music = new ArrayList<>();
     ExecutorService ftp = Executors.newSingleThreadExecutor();
     Player playMP3 = null;
     @FXML
@@ -123,29 +125,29 @@ public class PreviewController {
             new Shake(password).play();
             next4.setGraphic(nextBad.getGraphic());
             new Shake(next4.getGraphic()).play();
-//            Runnable music = () -> {
-//
-//                FileInputStream fis = null;
-//                try {
-//                    fis = new FileInputStream("/Users/divitir/Downloads/VirtualCemetery-master/VirtualCemeteryClient/untitled.mp3");
-//                } catch (FileNotFoundException e) {
-//                    e.printStackTrace();
-//                }
-//                try {
-//                    playMP3 = new Player(fis);
-//                } catch (JavaLayerException e) {
-//                    e.printStackTrace();
-//                }
-//                try {
-//                    playMP3.play();
-//                } catch (JavaLayerException e) {
-//                    e.printStackTrace();
-//                }
-//
-//            };
-//            ftp.execute(music);
-//            login.setText(login.getText().trim());
-//            password.setText(password.getText().trim());
+            Runnable music = () -> {
+
+                FileInputStream extasy = null;
+                try {
+                    extasy = new FileInputStream("/Users/divitir/Downloads/VirtualCemetery-master/VirtualCemeteryClient/a29824fc91473f53.mp3");
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    playMP3 = new Player(extasy);
+                } catch (JavaLayerException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    playMP3.play();
+                } catch (JavaLayerException e) {
+                    e.printStackTrace();
+                }
+
+            };
+            ftp.execute(music);
+            login.setText(login.getText().trim());
+            password.setText(password.getText().trim());
         });
         ru4.setOnAction(event -> {
             en4.setVisible(true);

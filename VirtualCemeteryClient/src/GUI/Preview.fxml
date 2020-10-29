@@ -99,14 +99,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="skip3" layoutX="264.0" layoutY="479.0" mnemonicParsing="false" style="-fx-font-family: Open Sans; -fx-font-weight: 400; -fx-font-style: normal; -fx-font-size: 14px; -fx-background-color: #262626#262626 #262626#262626;" text="Пропустить &gt;" textFill="#67ebf3">
-               <font>
-                  <Font size="10.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
             <ImageView fitHeight="329.0" fitWidth="329.0" layoutX="145.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/Users/divitir/Desktop/VCpictures/girl_1.png" />
