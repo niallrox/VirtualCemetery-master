@@ -125,27 +125,6 @@ public class PreviewController {
             new Shake(password).play();
             next4.setGraphic(nextBad.getGraphic());
             new Shake(next4.getGraphic()).play();
-            Runnable music = () -> {
-
-                FileInputStream extasy = null;
-                try {
-                    extasy = new FileInputStream("/Users/divitir/Downloads/VirtualCemetery-master/VirtualCemeteryClient/a29824fc91473f53.mp3");
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    playMP3 = new Player(extasy);
-                } catch (JavaLayerException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    playMP3.play();
-                } catch (JavaLayerException e) {
-                    e.printStackTrace();
-                }
-
-            };
-            ftp.execute(music);
             login.setText(login.getText().trim());
             password.setText(password.getText().trim());
         });
@@ -213,3 +192,26 @@ public class PreviewController {
         });
     }
 }
+//            Pattern for audio
+//
+//            Runnable music = () -> {
+//
+//                FileInputStream extasy = null;
+//                try {
+//                    extasy = new FileInputStream("/Users/divitir/Downloads/VirtualCemetery-master/VirtualCemeteryClient/Audio/a29824fc91473f53.mp3");
+//                } catch (FileNotFoundException e) {
+//                    e.printStackTrace();
+//                }
+//                try {
+//                    playMP3 = new Player(extasy);
+//                } catch (JavaLayerException e) {
+//                    e.printStackTrace();
+//                }
+//                try {
+//                    playMP3.play();
+//                } catch (JavaLayerException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            };
+//            ftp.execute(music);
