@@ -7,21 +7,16 @@ import java.net.SocketAddress;
 import java.util.Scanner;
 
 public class ClientConnection {
-    private ClientSender clientSender = new ClientSender();
-    private ClientReceiver clientReceive = new ClientReceiver();
     private ClientHandler clientHandler = new ClientHandler();
+    private Scanner scanner = new Scanner(System.in);
 
     public void connection() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите портик");
-        int port = Integer.parseInt(scanner.nextLine());
-        SocketAddress socketAddress = new InetSocketAddress("localhost", port);
+        System.out.println("Введите порт");
+        SocketAddress socketAddress = new InetSocketAddress("localhost", Integer.parseInt(scanner.nextLine()));
         try (DatagramSocket datagramSocket = new DatagramSocket()) {
             datagramSocket.connect(socketAddress);
             while (true) {
-                String command = scanner.nextLine();
-                clientSender.sendCommand(datagramSocket, socketAddress, clientHandler.handle(command));
-                System.out.println(clientReceive.receiveCommand(datagramSocket));
+                clientHandler.handle(scanner.nextLine(), datagramSocket, socketAddress);
             }
         } catch (IOException e) {
             e.printStackTrace();

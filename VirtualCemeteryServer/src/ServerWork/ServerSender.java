@@ -20,6 +20,10 @@ public class ServerSender implements Runnable {
         this.datagramChannel = datagramChannel;
     }
 
+    /**
+     * Метод отправляет результат на клиент
+     * Тут все вроде четко
+     */
     @Override
     public void run() {
         try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
